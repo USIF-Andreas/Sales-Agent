@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Aurora Noise-Cancelling Headset",
+    "category": "audio",
+    "price": 199.0,
+    "summary": "Over-ear wireless headset with active noise cancellation, 30h battery, and USB-C fast charge. Best for remote workers and frequent travelers."
+  },
+  {
+    "name": "Nimbus Standing Desk",
+    "category": "furniture",
+    "price": 449.0,
+    "summary": "Electric height-adjustable standing desk with memory presets and a 60-inch bamboo top. Ergonomic for home offices."
+  },
+  {
+    "name": "Solstice Smart Lamp",
+    "category": "lighting",
+    "price": 89.0,
+    "summary": "App-controlled LED lamp with circadian tuning and voice assistant support. Great for focused evening work."
+  },
+  {
+    "name": "Vortex Mechanical Keyboard",
+    "category": "accessories",
+    "price": 129.0,
+    "summary": "Hot-swappable mechanical keyboard with low-profile switches and per-key RGB. Built for programmers."
+  },
+  {
+    "name": "Cascade Ergo Chair",
+    "category": "furniture",
+    "price": 329.0,
+    "summary": "Mesh office chair with adjustable lumbar support and 4D armrests. Reduces back strain during long sessions."
+  }
+]

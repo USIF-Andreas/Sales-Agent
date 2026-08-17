@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptive Sales Agent</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◈</span>
+      <div>
+        <h1>Adaptive Sales Agent</h1>
+        <p class="tagline">Simple requests answered by one specialist · complex requests routed through the Supervisor</p>
+      </div>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="chat">Chat</button>
+      <button class="tab" data-tab="compare">Cost / Latency</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== CHAT VIEW ===================== -->
+    <section id="chat-view" class="view active">
+      <div class="chat-pane">
+        <div id="messages" class="messages">
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon">◈</div>
+            <h2>Ask anything about our products</h2>
+            <p>Try a simple price query, a support issue, or a cross-domain recommendation.</p>
+            <div class="suggestions">
+              <button class="chip">What is the price of the Aurora headset?</button>
+              <button class="chip">I want a refund for my broken Solstice lamp.</button>
+              <button class="chip">Any discount on the Vortex keyboard?</button>
+              <button class="chip">I'm a remote worker with a $300 budget. Which product do you recommend for me?</button>
+              <button class="chip">My company wants to buy 10 desks today. Quote me ASAP, budget is $5000.</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="composer">
+          <textarea id="input" rows="1" placeholder="Type a message…  (Enter to send, Shift+Enter for newline)"></textarea>
+          <button id="send" class="send-btn" title="Send">➤</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMPARE VIEW ===================== -->
+    <section id="compare-view" class="view">
+      <div class="compare-pane">
+        <div class="card">
+          <h2>Cost / latency comparison <span class="sub">(Phase 5)</span></h2>
+          <p class="muted">
+            Same requests run through four designs. Watch the adaptive gate skip the full
+            Supervisor pipeline on simple requests, and the parallel fan-out avoid extra tokens.
+          </p>
+          <div id="compare-table-wrap" class="table-wrap">
+            <table id="compare-table">
+              <thead>
+                <tr>
+                  <th>Design</th>
+                  <th>Path</th>
+                  <th>Nodes</th>
+                  <th>Input tok</th>
+                  <th>Output tok</th>
+                  <th>Wall-clock (ms)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div id="compare-highlights" class="highlights"></div>
+          <p class="muted note">Wall-clock latency from the deterministic mock LLM provider; swap in an Anthropic/Groq key for real-model numbers.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="trace-item-template">
+    <div class="trace-row">
+      <span class="dot"></span>
+      <span class="trace-node"></span>
+      <span class="trace-meta"></span>
+      <span class="trace-note"></span>
+    </div>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
